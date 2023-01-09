@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
+import PuppyList from './Components/PuppyList';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -18,7 +19,11 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <main className="App__main">
+        <PuppyList/>
+        <section>Right side</section>
+      </main>
     </div>
   );
 }
