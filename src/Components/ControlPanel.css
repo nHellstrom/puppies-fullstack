@@ -1,0 +1,13 @@
+.ControlPanel__button {
+    padding: 1rem;
+}
+
+.ControlPanel__leaf {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    padding: 2rem;
+    /* margin: 3rem 4rem; */
+}
+

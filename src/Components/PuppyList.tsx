@@ -25,7 +25,8 @@ const PuppyList = () => {
     
     }, [])
 
-    return <div className="PuppyList">
+    return <section className="Bifurcation">
+        <h2 className="Bifurcation__title">Puppy list</h2>
         <>
         {puppyList != undefined && puppyList.map(p => 
             <PuppyIndividual name={p.name} id={p.id} breed={p.breed} birthDate={p.birthDate} key={Math.random()}/>
@@ -33,7 +34,7 @@ const PuppyList = () => {
         </>
         
         {/* <PuppyIndividual name="Testdog" id={null} breed="Testbreed" birthDate="1999-01-02" /> */}
-    </div>
+    </section>
 }
 
 export default PuppyList;

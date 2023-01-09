@@ -1,13 +1,19 @@
 :root {
-  --light-bg-color: #F6E7D8;
+  --light-bg-color: #1C315E;
+  --dark-bg-color: #227C70;
+  --primary-color: #88A47C;
+  --secondary-color: #E6E2C3;
+  --main-black: rgb(20, 0, 30);
+  /* --light-bg-color: #F6E7D8;
   --dark-bg-color: #F68989;
   --primary-color: #C65D7B;
   --secondary-color: #874356;
-  --main-black: rgb(25, 0, 0);
+  --main-black: rgb(25, 0, 0); */
 }
 
 html {
   font-size: 62.5%;
+  background-color: var(--secondary-color);
 }
 
 * {
@@ -15,14 +21,51 @@ html {
   padding: 0;
 }
 
+.App__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #88A47C;
+  height: 5vh;
+}
+
 .App__main {
   background-color: var(--bg-color);
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   /* font-size: calc(10px + 2vmin); */
   color: var(--main-black);
+}
+
+.Bifurcation {
+  background-color: var(--dark-bg-color);
+  height: 80vh;
+  padding: 2rem;
+  /* min-width: 200px; */
+  /* width: 40vw; */
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.Bifurcation__smaller {
+  height: fit-content;
+  /* width: auto; */
+}
+
+.Bifurcation__title {
+  /* background-color: var(--main-black); */
+  color:var(--main-black);
+  font-size: 2.8rem;
+  text-shadow: var(--secondary-color) 0 0 12px;
+  /* padding: 2rem 3rem; */
+  border-radius: 5rem;
 }
