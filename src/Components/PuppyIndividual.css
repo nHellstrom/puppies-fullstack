@@ -1,0 +1,23 @@
+.Puppy__Card {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    background-color: var(--primary-color);
+    font-size: 1.8rem;
+    width: 35rem;
+}
+
+.Puppy__image {
+    margin: 5px;
+    width: 50%;
+    object-fit: cover;
+}
+
+.Puppy__info {
+   list-style: none;
+}
+
+.Puppy__info > li:nth-child(2) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+ }
