@@ -31,9 +31,28 @@ const PuppyList = () => {
     }
 
     const renderFetchedPuppies = () => {
-        return puppyList != undefined && puppyList.map(p => 
-            <PuppyIndividual name={p.name} id={p.id} breed={p.breed} birthDate={p.birthDate} key={Math.random()}/>
-        )
+        // return puppyList != undefined && puppyList.map((p,index) => 
+        //     <><PuppyIndividual name={p.name} id={p.id} breed={p.breed} birthDate={p.birthDate} key={p.id}/></>
+        // )
+
+        return <table className="PuppyList__table">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>Birthdate</th>
+                <th></th>
+            </tr>
+            {puppyList !== undefined && puppyList.map((p,index) =>
+            <tr className="PuppyList__puppyrow">
+                <td>{index+1}</td>
+                <td>{p.name.length < 12 ? p.name : `${p.name.slice(0,10)}...`}</td>
+                <td>{p.breed.length < 12 ? p.breed : `${p.breed.slice(0,10)}...`}</td>
+                <td>{p.birthDate}</td>
+                <td>Edit</td>
+            </tr>
+            )}
+        </table>
     }
     
     useEffect(() => {
@@ -45,6 +64,7 @@ const PuppyList = () => {
 
     return <section className="Bifurcation">
         <h2 className="Bifurcation__title">Puppy list</h2>
+        <p>Currently has {puppyList?.length ?? "no"} puppies</p>
         <>
         {connectionWorking ? renderFetchedPuppies() : showError()}
         </>
