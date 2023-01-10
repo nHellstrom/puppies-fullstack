@@ -12,12 +12,19 @@
 
 .PuppyList_Errormessage {
     text-align: center;
-    background-color: crimson;
-    color:whitesmoke;
+    background-color: rgba(0, 0, 0, 0.75);
+    color:crimson;
+    text-shadow: black 0 0 10px;
     padding: 1.5rem;
     margin: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    box-shadow: crimson 0px 0px 20px;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 20px;
+}
+.PuppyList_Errormessage > h2 {
+    font-size: 2rem;
+}
+.PuppyList_Errormessage > p {
+    font-size: 1.5rem;
 }

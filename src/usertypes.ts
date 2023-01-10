@@ -5,4 +5,10 @@ interface IPuppy {
     "birthDate": string
 }
 
-export type { IPuppy };
+interface IPuppyNoID {
+    "name"?: string,
+    "breed"?: string,
+    "birthDate"?: string
+}
+
+export type { IPuppy, IPuppyNoID };

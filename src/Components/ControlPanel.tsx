@@ -1,5 +1,6 @@
 import React from "react";
 import "./ControlPanel.css";
+import AddPuppyForm from "./AddPuppyForm";
 
 const ControlPanel = () => {
     return <section className="Bifurcation Bifurcation__smaller">
@@ -9,6 +10,7 @@ const ControlPanel = () => {
             <button className="ControlPanel__button">Action</button>
             <button className="ControlPanel__button">Another</button>
         </div>
+        <AddPuppyForm/>
     </section>
 }
 

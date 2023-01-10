@@ -10,10 +10,17 @@ const PuppyList = () => {
 
     
     const fetchPuppiesFromAPI = async () => {
-        const response = await fetch("http://localhost:5177/api/Puppies");
-        const data = await response.json();
-        console.log(data)
-        setPuppyList(data);
+        try {
+            const response = await fetch("http://localhost:5177/api/Puppies");
+            const data = await response.json();
+            console.log(data)
+            setPuppyList(data);
+            setConnectionWorking(true);
+        }
+        catch(e) {
+            console.error("Could not resolve API fetch ☹️ ", e)
+            setConnectionWorking(false);
+        }
     }
 
     const showError = () => {
@@ -31,12 +38,7 @@ const PuppyList = () => {
     
     useEffect(() => {
         (async () => {
-            try {
-                fetchPuppiesFromAPI();
-            }
-            catch(e) {
-                console.error("Could not resolve API fetch. ", e)
-            }
+            fetchPuppiesFromAPI();
         })();
     
     }, [])
