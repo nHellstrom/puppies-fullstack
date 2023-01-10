@@ -51,13 +51,36 @@
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* .PuppyList__table td:last-child,
+.PuppyList__table th:last-child {
+    width: 4ch;
+} */
+
 .PuppyList__table th {
     border-bottom: 1px solid;
 }
 
 .PuppyList__puppyrow:hover {
     /* transform: scale(1.1); */
+    cursor: pointer;
     background-color: rgba(0,0,0,0.05);
+}
+
+.PuppyList__editbutton {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.PuppyList__editbutton:hover {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.PuppyList__flyoutcard {
+    z-index: 100;
+    position: fixed;
+    top: 40vh;
+    left: 40vw;
 }
 
 /* th, td {

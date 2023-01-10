@@ -8,6 +8,7 @@ import ControlPanel from "./ControlPanel";
 const PuppyList = () => {
     const [puppyList, setPuppyList]= React.useState<IPuppy[] | undefined>(undefined);
     const [connectionWorking, setConnectionWorking] = React.useState< undefined | boolean>(undefined);
+    const [featuredPuppy, setFeaturedPuppy] = React.useState<IPuppy>({id:null, name:"Puppy", breed:"Breed", birthDate:"Birthdate"});
 
     
     const fetchPuppiesFromAPI = async () => {
@@ -22,6 +23,11 @@ const PuppyList = () => {
             console.error("Could not resolve API fetch ☹️ ", e)
             setConnectionWorking(false);
         }
+    }
+
+    const switchPuppyCard = (e : any) => {
+        console.log(e);
+        setFeaturedPuppy(e);
     }
 
     const showError = () => {
@@ -43,15 +49,15 @@ const PuppyList = () => {
                 <th>Name</th>
                 <th>Breed</th>
                 <th>Birthdate</th>
-                <th></th>
+                {/* <th></th> */}
             </tr>
             {puppyList !== undefined && puppyList.map((p,index) =>
-            <tr className="PuppyList__puppyrow" key={p.id}>
+            <tr className="PuppyList__puppyrow" key={p.id}  onClick={() => switchPuppyCard(p)}>
                 <td>{index+1}</td>
                 <td>{p.name.length < 12 ? p.name : `${p.name.slice(0,10)}...`}</td>
                 <td>{p.breed.length < 12 ? p.breed : `${p.breed.slice(0,10)}...`}</td>
                 <td>{p.birthDate}</td>
-                <td>Edit</td>
+                {/* <td className="PuppyList__editbutton">Edit</td> */}
             </tr>
             )}
             </tbody>
@@ -69,6 +75,7 @@ const PuppyList = () => {
     <section className="Bifurcation">
         <h2 className="Bifurcation__title">Puppy list</h2>
         <p>Currently has {puppyList?.length ?? "no"} puppies</p>
+        <p>Click on a row to see more info or edit the pupper.</p>
         <>
         {connectionWorking ? renderFetchedPuppies() : showError()}
         </>
@@ -77,6 +84,7 @@ const PuppyList = () => {
     </section>
     <section>
         <ControlPanel fetchPuppiesFromAPI={fetchPuppiesFromAPI}/>
+        <PuppyIndividual id={featuredPuppy.id} name={featuredPuppy?.name} breed={featuredPuppy?.breed} birthDate={featuredPuppy?.birthDate}/>        
     </section>
     </>
 }

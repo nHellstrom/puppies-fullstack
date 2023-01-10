@@ -47,8 +47,9 @@ html {
   padding: 2rem;
   /* min-width: 200px; */
   /* width: 40vw; */
-  min-width: 35vw;
-  width: fit-content;
+  /* min-width: 35vw; */
+  width: 40vw;
+  /* width: fit-content; */
   height: fit-content;
   display: flex;
   flex-direction: column;

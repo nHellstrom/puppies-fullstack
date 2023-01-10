@@ -12,7 +12,7 @@ const AddPuppyForm = (props : any) => {
     const TestPuppy : IPuppyNoID = {
         name: "TestPup",
         breed: "TestBreed",
-        birthDate: "1984-01-01"
+        birthDate: "TestDate" 
     };
 
     const postNewPuppy = async () => {
