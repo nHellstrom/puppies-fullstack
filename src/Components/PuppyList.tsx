@@ -37,6 +37,7 @@ const PuppyList = () => {
         // )
 
         return <table className="PuppyList__table">
+            <tbody>
             <tr>
                 <th>#</th>
                 <th>Name</th>
@@ -45,7 +46,7 @@ const PuppyList = () => {
                 <th></th>
             </tr>
             {puppyList !== undefined && puppyList.map((p,index) =>
-            <tr className="PuppyList__puppyrow">
+            <tr className="PuppyList__puppyrow" key={p.id}>
                 <td>{index+1}</td>
                 <td>{p.name.length < 12 ? p.name : `${p.name.slice(0,10)}...`}</td>
                 <td>{p.breed.length < 12 ? p.breed : `${p.breed.slice(0,10)}...`}</td>
@@ -53,6 +54,7 @@ const PuppyList = () => {
                 <td>Edit</td>
             </tr>
             )}
+            </tbody>
         </table>
     }
     
