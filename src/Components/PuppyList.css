@@ -9,3 +9,15 @@
     justify-content: center;
     gap: 1rem;
 } */
+
+.PuppyList_Errormessage {
+    text-align: center;
+    background-color: crimson;
+    color:whitesmoke;
+    padding: 1.5rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: crimson 0px 0px 20px;
+}
