@@ -1,8 +1,13 @@
 import React from "react";
 import "./ControlPanel.css";
 import AddPuppyForm from "./AddPuppyForm";
+import { IPuppy } from "../usertypes";
 
-const ControlPanel = () => {
+const ControlPanel = (props : any) => {
+    // const puppyList : IPuppy[] = props.state;
+    // const setPuppyList : React.Dispatch<React.SetStateAction<IPuppy[]>>= props.setState;
+    
+
     return <section className="Bifurcation Bifurcation__smaller">
         <h2 className="Bifurcation__title">Control Panel</h2>
         <div className="ControlPanel__leaf">
@@ -10,7 +15,7 @@ const ControlPanel = () => {
             <button className="ControlPanel__button">Action</button>
             <button className="ControlPanel__button">Another</button>
         </div>
-        <AddPuppyForm/>
+        <AddPuppyForm fetchPuppiesFromAPI={props.fetchPuppiesFromAPI}/>
     </section>
 }
 

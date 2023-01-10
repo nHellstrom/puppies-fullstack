@@ -1,7 +1,10 @@
 import React from "react";
-import { IPuppyNoID } from "../usertypes";
+import { IPuppy, IPuppyNoID } from "../usertypes";
 
-const AddPuppyForm = () => {
+const AddPuppyForm = (props : any) => {
+    // const reRenderPuppyList : IPuppy[] = props.state;
+    // const reRenderList = props.fetchAllFunction;
+
     const [name, setName] = React.useState<string | undefined>(undefined);
     const [breed, setBreed] = React.useState<string | undefined>(undefined);
     const [birthDate, setBirthDate] = React.useState<string | undefined>(undefined);
@@ -24,6 +27,7 @@ const AddPuppyForm = () => {
             });
             let response = await postData.json();
             console.log("Pup has been posted! ✉️ Server response: ", response)
+            props.fetchPuppiesFromAPI();
         }
         catch (e) {
             console.error("Error while posting form! ☹️", e);

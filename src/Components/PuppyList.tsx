@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./PuppyList.css";
 import PuppyIndividual from "./PuppyIndividual";
 import {IPuppy} from "../usertypes.js";
+import ControlPanel from "./ControlPanel";
 
 
 const PuppyList = () => {
@@ -62,7 +63,8 @@ const PuppyList = () => {
     
     }, [])
 
-    return <section className="Bifurcation">
+    return <>
+    <section className="Bifurcation">
         <h2 className="Bifurcation__title">Puppy list</h2>
         <p>Currently has {puppyList?.length ?? "no"} puppies</p>
         <>
@@ -71,6 +73,10 @@ const PuppyList = () => {
         
         {/* <PuppyIndividual name="Testdog" id={null} breed="Testbreed" birthDate="1999-01-02" /> */}
     </section>
+    <section>
+        <ControlPanel fetchPuppiesFromAPI={fetchPuppiesFromAPI}/>
+    </section>
+    </>
 }
 
 export default PuppyList;
