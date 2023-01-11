@@ -1,9 +1,12 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom";
 import LandingPage from './Pages/LandingPage';
+import SearchResults from './Pages/SearchResults';
 import PuppyList from './Components/PuppyList';
 
 function App() {
+
+  // const params = useParams();
 
   return (
     <div className="App">
@@ -13,9 +16,12 @@ function App() {
           <Link to="/PuppyList" className='App__temporarybuttondeletethis'>🔶Temporary link to search functions🔶</Link>
         </header>
         <main className="App__main">
-          <Routes>x
+          <Routes>
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/PuppyList" element={<PuppyList/>}/>
+            {/* <Route path="/search?name=:searchquery" element={<SearchResults/>}/> */}
+            <Route path="/search/:searchquery" element={<SearchResults/>}/>
+            {/* <Route path="/test" element={<SearchResults/>}/> */}
             <Route path="*" element={<LandingPage/>}/>
           </Routes>
         </main>

@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr 2fr 2fr 1fr;
+    min-width: fit-content
 }
 
 .LandingPage__Title {
@@ -70,6 +71,6 @@ filter: hue-rotate(180deg)
 
 .LandingPage__Searchbutton {
     margin-left: 0.7rem;
-    height: 3rem;;
+    height: 3.2rem;;
     width: 6ch;
 }

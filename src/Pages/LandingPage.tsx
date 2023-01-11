@@ -5,7 +5,6 @@ import "./LandingPage.css"
 
 const LandingPage = () => {
     const [search, setSearch] = React.useState<string>("");
-
     // const searchButtonClicked = (e : any) => {
     //     history.pushState(null, "", "puppySearch");
     // }
@@ -20,7 +19,7 @@ const LandingPage = () => {
                     Search dogs by name:
                     <input className="LandingPage__SearchfieldField" type="text" placeholder={"Name of the dog"} value={search} onChange={(e) => setSearch(e.target.value)}/>
                 </label>
-            <Link to={"search?name=" + search}>
+            <Link to={"search/" + search}>
                 <button className="LandingPage__Searchbutton">Go!</button>
             </Link>
             </div>
