@@ -1,22 +1,24 @@
-import React from 'react';
-import PuppyList from './Components/PuppyList';
-import ControlPanel from './Components/ControlPanel';
-import { IPuppy } from './usertypes';
 import './App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import LandingPage from './Pages/LandingPage';
+import PuppyList from './Components/PuppyList';
 
 function App() {
-  // const [puppyList, setPuppyList]= React.useState<IPuppy[] | undefined>(undefined);
-  // const state = {puppyList, setPuppyList};
 
   return (
     <div className="App">
-      <header className="App__header">
-        <h1>Puppy Database</h1>
-      </header>
-      <main className="App__main">
-        <PuppyList />
-        {/* <ControlPanel/> */}
-      </main>
+        <BrowserRouter>
+        <header className="App__header">
+          <Link to="/"><h1>Puppy Database</h1></Link>
+        </header>
+        <main className="App__main">
+          <Routes>x
+            <Route path="/" element={<LandingPage/>}/>
+            <Route path="/PuppyList" element={<PuppyList/>}/>
+            <Route path="*" element={<LandingPage/>}/>
+          </Routes>
+        </main>
+        </BrowserRouter>
     </div>
   );
 }

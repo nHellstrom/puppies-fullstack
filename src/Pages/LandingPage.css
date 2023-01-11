@@ -1,0 +1,10 @@
+.LandingPage__HeroSearch {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-image: url(heroimage.png);
+    width: 80vw;
+    height: 80vh;
+    background-size:cover;
+    /* object-fit: cover; */
+}
