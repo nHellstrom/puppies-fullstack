@@ -82,7 +82,7 @@ const PuppyList = () => {
         
         {/* <PuppyIndividual name="Testdog" id={null} breed="Testbreed" birthDate="1999-01-02" /> */}
     </section>
-    <section>
+    <section className="Bifurcation--right">
         <ControlPanel fetchPuppiesFromAPI={fetchPuppiesFromAPI}/>
         <PuppyIndividual id={featuredPuppy.id} name={featuredPuppy?.name} breed={featuredPuppy?.breed} birthDate={featuredPuppy?.birthDate}/>        
     </section>

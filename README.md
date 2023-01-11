@@ -9,9 +9,9 @@ Requirements for the UI:
 DONE:
 - It should display the initial puppies that exist in the DB on first load.
 - It should display details when clicking on a selected puppy.
+- It should have the possibility to add a new puppy.
 
 ALMOST DONE:
-- It should have the possibility to add a new puppy.
 
 TODO:
 - It should have the possibility to update an existing puppy.

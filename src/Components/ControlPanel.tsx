@@ -11,7 +11,7 @@ const ControlPanel = (props : any) => {
 
     }
 
-    return <section className="Bifurcation Bifurcation__smaller">
+    return <section className="ControlPanel">
         <h2 className="Bifurcation__title">Control Panel</h2>
         <div className="ControlPanel__leaf">
             <button className="ControlPanel__button">Add New<br/>Puppy</button>

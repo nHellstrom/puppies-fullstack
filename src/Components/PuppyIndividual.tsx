@@ -20,6 +20,10 @@ const PuppyIndividual = (props: IPuppy) => {
             <li><b>Birthdate:</b><br/> {props.birthDate ? props.birthDate : "Missing"}</li>
             <li><b>Id:</b><br/> {props.id ? props.id : "Missing"}</li>
         </ul>
+        <div className="Puppy__controls">
+            <button>Delete (not impl)</button>
+            <button>Update (not impl)</button>
+        </div>
     </div>
 }
 
