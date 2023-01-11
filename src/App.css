@@ -20,15 +20,31 @@ html {
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Comfortaa', cursive;
 }
 
 .App__header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 0 10vw;
   background-color: #88A47C;
-  height: 5vh;
-  margin-bottom: 4rem;
+  height: 4vh;
+  margin-bottom: 1vh;
+}
+
+.App__headerlogo,
+.App__headerlogo:link,
+.App__headerlogo:visited,
+.App__headerlogo:active {
+  color: var(--light-bg-color);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.App__headerlogo:hover {
+  transform: scale(1.03) rotate(-1deg);
+  text-shadow: 0 0 20px var(--light-bg-color);
 }
 
 .App__main {
@@ -75,4 +91,8 @@ html {
   text-shadow: var(--secondary-color) 0 0 12px;
   /* padding: 2rem 3rem; */
   border-radius: 5rem;
+}
+
+.App__temporarybuttondeletethis {
+  font-size: 1.5rem;
 }

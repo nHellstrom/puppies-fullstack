@@ -9,7 +9,8 @@ function App() {
     <div className="App">
         <BrowserRouter>
         <header className="App__header">
-          <Link to="/"><h1>Puppy Database</h1></Link>
+          <Link to="/" className='App__headerlogo'><h1 >🐕DogDogGo</h1></Link>
+          <Link to="/PuppyList" className='App__temporarybuttondeletethis'>🔶Temporary link to search functions🔶</Link>
         </header>
         <main className="App__main">
           <Routes>x
