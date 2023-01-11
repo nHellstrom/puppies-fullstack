@@ -5,14 +5,14 @@ const AddPuppyForm = (props : any) => {
     // const reRenderPuppyList : IPuppy[] = props.state;
     // const reRenderList = props.fetchAllFunction;
 
-    const [name, setName] = React.useState<string | undefined>(undefined);
-    const [breed, setBreed] = React.useState<string | undefined>(undefined);
-    const [birthDate, setBirthDate] = React.useState<string | undefined>(undefined);
+    const [name, setName] = React.useState<string>("name");
+    const [breed, setBreed] = React.useState<string>("breed");
+    const [birthDate, setBirthDate] = React.useState<string>("2000-01-01");
 
     const TestPuppy : IPuppyNoID = {
-        name: "TestPup",
-        breed: "TestBreed",
-        birthDate: "TestDate" 
+        name: name,
+        breed: breed,
+        birthDate: birthDate 
     };
 
     const postNewPuppy = async () => {
@@ -36,6 +36,22 @@ const AddPuppyForm = (props : any) => {
     
 
     return <>
+        <form className="PuppyForm__Form">
+            <label>
+                Name:
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            </label>
+            <br/>
+            <label>
+                Breed: 
+                <input type="text" value={breed} onChange={(e) => setBreed(e.target.value)} />
+            </label>
+            <br/>
+            <label>
+                Birthdate: 
+                <input type="text" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
+            </label>
+        </form>
         <button onClick={postNewPuppy}>Post a test puppy</button>
     </>
 }
