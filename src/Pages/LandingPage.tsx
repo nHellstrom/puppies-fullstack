@@ -5,9 +5,14 @@ import "./LandingPage.css"
 
 const LandingPage = () => {
     const [search, setSearch] = React.useState<string>("");
-    // const searchButtonClicked = (e : any) => {
-    //     history.pushState(null, "", "puppySearch");
-    // }
+    const input = document.getElementById("searchInput")
+
+    input?.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          document.getElementById("searchButton")?.click();
+        }
+      });
 
     return <section className="LandingPage">
         <div className="LandingPage__HeroSearch">
@@ -17,10 +22,15 @@ const LandingPage = () => {
             <div className="LandingPage__Search">
                 <label className="LandingPage__Searchfield">
                     Search dogs by name:
-                    <input className="LandingPage__SearchfieldField" type="text" placeholder={"Name of the dog"} value={search} onChange={(e) => setSearch(e.target.value)}/>
+                    <input 
+                    className="LandingPage__SearchfieldField"
+                    id="searchInput" 
+                    type="text" placeholder={"Name of the dog"} 
+                    value={search} 
+                    onChange={(e) => setSearch(e.target.value)}/>
                 </label>
             <Link to={"search/" + search}>
-                <button className="LandingPage__Searchbutton">Go!</button>
+                <button id="searchButton" className="LandingPage__Searchbutton">Go!</button>
             </Link>
             </div>
         </div>

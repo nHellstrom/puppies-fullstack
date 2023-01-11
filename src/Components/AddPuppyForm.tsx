@@ -10,8 +10,6 @@ const AddPuppyForm = (props : any) => {
     const todayString = 
         `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2,"0")}-${today.getDate()}`;
 
-    console.log(todayString);
-
     const [name, setName] = React.useState<string>("Name");
     const [breed, setBreed] = React.useState<string>("Breed");
     const [birthDate, setBirthDate] = React.useState<string>(todayString);

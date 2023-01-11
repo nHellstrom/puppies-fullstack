@@ -4,12 +4,7 @@ import AddPuppyForm from "./AddPuppyForm";
 import { IPuppy } from "../usertypes";
 
 const ControlPanel = (props : any) => {
-    // const puppyList : IPuppy[] = props.state;
-    // const setPuppyList : React.Dispatch<React.SetStateAction<IPuppy[]>>= props.setState;
     
-    const showAction = () => {
-
-    }
 
     return <section className="ControlPanel">
         <h2 className="Bifurcation__title">Control Panel</h2>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { IPuppy } from "../usertypes";
 import "./SearchResults.css"
 
@@ -7,6 +7,7 @@ const SearchResults = () => {
     const params = useParams();
     console.log(params);
     const [searchResults, setSearchResults] = useState<IPuppy[]>([])
+    const [connectionWorking, setConnectionWorking] = useState<boolean>(true);
 
     const fetchPuppiesFromAPI = async () => {
         try {
@@ -16,16 +17,17 @@ const SearchResults = () => {
             setSearchResults(data)
         }
         catch(e) {
+            setConnectionWorking(false);
             console.error("Could not resolve API fetch ☹️ ", e)
         }
     }
 
-    // const showError = () => {
-    //     return <div className="PuppyList_Errormessage">
-    //         <h2>Error!</h2>
-    //         <p>Could not fetch data from the server ☹️</p>
-    //     </div>
-    // }
+    const showError = () => {
+        return <div className="PuppyList_Errormessage">
+            <h2>Error!</h2>
+            <p>Could not fetch data from the server ☹️</p>
+        </div>
+    }
 
     const renderFetchedPuppies = () => {
 
@@ -61,7 +63,11 @@ const SearchResults = () => {
     return <section className="SearchResults">
         <h2 className="SearchResults__title">Unstyled search results</h2>
         <p className="SearchResults__howMany"><b>Your search gave {searchResults.length} hits.</b></p>
-        {searchResults.length > 0 ? renderFetchedPuppies() : "No results!"}
+        {connectionWorking && (searchResults.length > 0 ? renderFetchedPuppies() : "No results!")}
+        {!connectionWorking && showError()}
+        <Link to={"/"}>
+            <button>Return</button>
+        </Link>
     </section>
 }
 
