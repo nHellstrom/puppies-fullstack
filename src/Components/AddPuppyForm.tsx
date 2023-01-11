@@ -1,13 +1,22 @@
 import React from "react";
 import { IPuppy, IPuppyNoID } from "../usertypes";
+import "./AddPuppyForm.css";
 
 const AddPuppyForm = (props : any) => {
     // const reRenderPuppyList : IPuppy[] = props.state;
     // const reRenderList = props.fetchAllFunction;
 
-    const [name, setName] = React.useState<string>("name");
-    const [breed, setBreed] = React.useState<string>("breed");
-    const [birthDate, setBirthDate] = React.useState<string>("2000-01-01");
+    const today = new Date();
+    const todayString = 
+        `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2,"0")}-${today.getDate()}`;
+
+    console.log(todayString);
+
+    const [name, setName] = React.useState<string>("Name");
+    const [breed, setBreed] = React.useState<string>("Breed");
+    const [birthDate, setBirthDate] = React.useState<string>(todayString);
+
+    
 
     const TestPuppy : IPuppyNoID = {
         name: name,
@@ -43,16 +52,17 @@ const AddPuppyForm = (props : any) => {
             </label>
             <br/>
             <label>
-                Breed: 
+                Breed:
                 <input type="text" value={breed} onChange={(e) => setBreed(e.target.value)} />
             </label>
             <br/>
             <label>
-                Birthdate: 
-                <input type="text" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
+                Birthdate:
+                <input type="date" value={birthDate} min="2000-01-01" max={todayString} onChange={(e) => setBirthDate(e.target.value)} />
             </label>
+            <br/>
+            <button onClick={postNewPuppy}>Post to DB</button>
         </form>
-        <button onClick={postNewPuppy}>Post a test puppy</button>
     </>
 }
 

@@ -1,0 +1,26 @@
+.PuppyForm__Form {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.PuppyForm__Form input {
+    width: 100%;
+}
+
+.PuppyForm__Form button {
+    width: fit-content;
+    align-self: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    transition: all 0.15s;
+}
+
+.PuppyForm__Form button:hover {
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transform: scale(1.03);
+    /* background-color: var(--contrast-color); */
+}

@@ -7,6 +7,9 @@ const ControlPanel = (props : any) => {
     // const puppyList : IPuppy[] = props.state;
     // const setPuppyList : React.Dispatch<React.SetStateAction<IPuppy[]>>= props.setState;
     
+    const showAction = () => {
+
+    }
 
     return <section className="Bifurcation Bifurcation__smaller">
         <h2 className="Bifurcation__title">Control Panel</h2>
