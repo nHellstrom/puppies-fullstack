@@ -97,3 +97,9 @@ html {
 .App__temporarybuttondeletethis {
   font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+}

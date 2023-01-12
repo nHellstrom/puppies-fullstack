@@ -75,3 +75,23 @@ filter: hue-rotate(90deg);
     height: 3.2rem;;
     width: 6ch;
 }
+
+@media only screen and (max-width: 1020px) {
+    .LandingPage__Search {
+        transform: scale(1)
+    }
+  }
+
+@media only screen and (max-width: 725px) {
+    .LandingPage {
+        width: 100vw;
+        height: 90vh;
+    }
+}
+
+@media only screen and (max-width: 515px) {
+    .LandingPage__HeroSearch {
+        grid-column: 1/10;
+        grid-row: 2;
+    }    
+}
