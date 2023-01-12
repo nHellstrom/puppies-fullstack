@@ -1,10 +1,8 @@
-import React from "react";
-import { IPuppy, IPuppyNoID } from "../usertypes";
+import React, {useCallback} from "react";
+import { IPuppyNoID } from "../../usertypes";
 import "./AddPuppyForm.css";
 
 const AddPuppyForm = (props : any) => {
-    // const reRenderPuppyList : IPuppy[] = props.state;
-    // const reRenderList = props.fetchAllFunction;
 
     const today = new Date();
     const todayString = 
@@ -16,7 +14,7 @@ const AddPuppyForm = (props : any) => {
 
     
 
-    const TestPuppy : IPuppyNoID = {
+    const postPuppy : IPuppyNoID = {
         name: name,
         breed: breed,
         birthDate: birthDate 
@@ -30,11 +28,11 @@ const AddPuppyForm = (props : any) => {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json' 
                 },
-                body: JSON.stringify(TestPuppy),
+                body: JSON.stringify(postPuppy),
             });
             let response = await postData.json();
             console.log("Pup has been posted! ✉️ Server response: ", response)
-            props.fetchPuppiesFromAPI();
+            alert("Pup has been posted! ✉️");
         }
         catch (e) {
             console.error("Error while posting form! ☹️", e);

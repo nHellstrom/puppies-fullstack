@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PuppyList from "../Components/PuppyList";
 import "./LandingPage.css"
 
 const LandingPage = () => {

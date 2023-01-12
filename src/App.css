@@ -94,8 +94,21 @@ html {
   border-radius: 5rem;
 }
 
-.App__temporarybuttondeletethis {
+.App__addPuppyButton {
   font-size: 1.5rem;
+}
+
+.App__addPuppyButton,
+.App__addPuppyButton:link,
+.App__addPuppyButton:visited,
+.App__addPuppyButton:active {
+  color: var(--main-black);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.App__addPuppyButton:hover {
+  text-shadow: 0 0 20px var(--light-bg-color);
 }
 
 @media only screen and (max-width: 400px) {

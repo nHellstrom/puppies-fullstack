@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { useParams, Link } from "react-router-dom";
-import { IPuppy } from "../usertypes";
+import { IPuppy } from "../../usertypes";
 import "./SearchResults.css"
-import PuppyIndividual from "../Components/PuppyIndividual";
+import PuppyIndividual from "../../Components/PuppyIndividual/PuppyIndividual";
 
 const SearchResults = () => {
     const params = useParams();
