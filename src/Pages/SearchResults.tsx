@@ -8,13 +8,16 @@ const SearchResults = () => {
     const params = useParams();
     console.log(params);
     const [searchResults, setSearchResults] = useState<IPuppy[]>([])
+    // const [listAll, setListAll] = useState<boolean>(false);
     const [connectionWorking, setConnectionWorking] = useState<boolean>(true);
     const [featuredPuppy, setFeaturedPuppy] = useState<IPuppy>({id:null, name:"Puppy", breed:"Breed", birthDate:"Birthdate"});
     const [showFeatured, setShowFeatured] = useState<boolean>(false);
 
+
     const fetchPuppiesFromAPI = async () => {
         try {
-            const response = await fetch(`http://localhost:5177/api/Puppies/searchname/${params.searchquery}`);
+            const apiAddress = !params.searchquery ? `http://localhost:5177/api/Puppies` : `http://localhost:5177/api/Puppies/searchname/${params.searchquery}`;
+            const response = await fetch(apiAddress);
             const data = await response.json();
             console.log(data)
             setSearchResults(data)

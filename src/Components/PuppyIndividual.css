@@ -8,12 +8,12 @@
     justify-content: space-between;
     gap: 3px;
     background-color: var(--primary-color);
-    border: solid 1px black;
+    border: solid 2px black;
     font-size: 1.8rem;
     width: 60rem;
     /* width: fit-content; */
     height: 40rem;
-    border-radius: 30px 0 30px 0;
+    border-radius: 15px 0 15px 0;
     overflow: hidden;
     margin-top: 3rem;
 }
@@ -23,7 +23,7 @@
     width: 50%;
     /* height:100%; */
     object-fit: cover;
-    border-radius: 30px 0 0 0;
+    border-radius: 15px 0 0 0;
 }
 
 .Puppy__info {

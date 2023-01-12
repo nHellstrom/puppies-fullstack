@@ -19,9 +19,10 @@ const LandingPage = () => {
             {/* <h2 className="LandingPage__Title LandingPage__Title--Dog">🐕</h2> */}
             <h2 className="LandingPage__Title">🐕<br/>DogDogGo</h2>
             <p className="LandingPage__Welcometext">When you need privacy for your puppers!</p>
+            
             <div className="LandingPage__Search">
                 <label className="LandingPage__Searchfield">
-                    Search dogs by name:
+                    Search dogs by name (empty to list all):
                     <input 
                     className="LandingPage__SearchfieldField"
                     id="searchInput" 

@@ -20,7 +20,7 @@ function App() {
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/PuppyList" element={<PuppyList/>}/>
             {/* <Route path="/search?name=:searchquery" element={<SearchResults/>}/> */}
-            <Route path="/search/:searchquery" element={<SearchResults/>}/>
+            <Route path="/search/:searchquery?" element={<SearchResults/>}/>
             {/* <Route path="/test" element={<SearchResults/>}/> */}
             <Route path="*" element={<LandingPage/>}/>
           </Routes>
