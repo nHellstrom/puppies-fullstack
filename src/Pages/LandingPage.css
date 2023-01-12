@@ -27,7 +27,7 @@
     grid-column: 3;
     font-size: 5rem;
     text-align: center;
-    transition:all 1s;
+    transition:all 6s;
 }
 
 /* .LandingPage__Title--Dog {
@@ -37,7 +37,7 @@
 } */
 
 .LandingPage__Title:hover {
-filter: hue-rotate(180deg)
+filter: hue-rotate(90deg);
 }
 
 .LandingPage__Welcometext {
@@ -54,6 +54,7 @@ filter: hue-rotate(180deg)
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    transform: scale(1.4)
 }
 
 .LandingPage__Searchfield {

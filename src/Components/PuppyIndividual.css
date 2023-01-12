@@ -1,13 +1,18 @@
 .Puppy__Card {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 3px;
-    background-color: var(--dark-bg-color);
+    background-color: var(--primary-color);
+    border: solid 1px black;
     font-size: 1.8rem;
-    width: 50rem;
+    width: 60rem;
     /* width: fit-content; */
-    height: 30rem;
+    height: 40rem;
     border-radius: 30px 0 30px 0;
     overflow: hidden;
     margin-top: 3rem;
@@ -24,13 +29,19 @@
 .Puppy__info {
    list-style: none;
    list-style-position: outside;
+   text-align: left;
 }
 
-.Puppy__info > li {
-    margin: 1rem 0;
+.Puppy__info li {
+    margin: 3rem 0;
  }
 
- .Puppy__info > li:last-child {
+ .Puppy__info b {
+   color: whitesmoke;
+   text-shadow: 0 0 6px rgba(0, 0, 0, 0.0.75);
+ }
+
+ .Puppy__info li:last-child {
     margin-bottom: 0;
  }
 
@@ -44,5 +55,21 @@
  }
 
  .Puppy__controls button {
-    width: 75%;
+    width: 9rem;
+ }
+
+ .Puppy__closeWindow {
+   position: absolute;
+   right: 1rem;
+   top: 1rem;
+   font-size: 1.4rem;
+   background-color: rgba(255,255,255,0.5);
+   border: solid 1px white;
+   padding:2px;
+   transition: all 0.2s;
+ }
+
+ .Puppy__closeWindow:hover {
+   cursor: pointer;
+   background-color: rgba(255,255,255,0.85);
  }
