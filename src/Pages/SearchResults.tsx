@@ -43,7 +43,7 @@ const SearchResults = () => {
     const renderFetchedPuppies = () => {
     
         return <>
-            {showFeatured && <PuppyIndividual puppy={featuredPuppy} setShowFeatured={setShowFeatured}/>}
+            {showFeatured && <PuppyIndividual puppy={featuredPuppy} setShowFeatured={setShowFeatured} fetchPuppiesFromAPI={fetchPuppiesFromAPI}/>}
             <div className={showFeatured ? "SearchResults__hide" : ""}>
             
                 <table className="SearchResults__table">

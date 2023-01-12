@@ -12,6 +12,29 @@ const PuppyIndividual = (props: any) => {
         
     // }, )
 
+    const deleteThisPuppy = async () => {
+        // http://localhost:5177/api/Puppies/67e4b842-bb62-4c5b-9922-9b8e193fa636
+
+        try {
+            if(window.confirm("Are you sure you want to delete this puppy?")) {
+                const deleteData = await fetch("http://localhost:5177/api/Puppies/" + props.puppy.id, {
+                    method: "DELETE",
+                    headers: { 
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json' 
+                    },
+                    
+                });
+                props.fetchPuppiesFromAPI();
+                props.setShowFeatured(false);
+            }
+        }
+        catch (e) {
+            alert("Deletion failed");
+            console.error("Error while deleting puppy! ☹️", e);
+        }
+    }
+
     return <div className="Puppy__Card">
         <img className="Puppy__image" src="https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"></img>
         <ul className="Puppy__info">
@@ -21,9 +44,9 @@ const PuppyIndividual = (props: any) => {
             <li><b>Id:</b><br/> {props.puppy.id ? props.puppy.id : "Missing"}</li>
         </ul>
         <div className="Puppy__controls">
-            <button>Delete (not impl)</button>
-            <button>Update (not impl)</button>
-        </div>
+            <button className="Puppy__button" onClick={deleteThisPuppy}>Delete</button>
+            <button className="Puppy__button" >Update (not impl)</button>
+        </div> 
         <div className="Puppy__closeWindow" onClick={() => props.setShowFeatured(false)}>❌<br/>Close</div>
     </div>
 }
